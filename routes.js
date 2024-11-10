@@ -1,4 +1,5 @@
 const express = require('express');
+const serverless = require('serverless-http');
 const db = require('./db');
 const router = express.Router();
 
@@ -76,3 +77,5 @@ function reserveSeats(seatIds, res) {
 }
 
 module.exports = router;
+
+// module.exports.handler = serverless(router);
