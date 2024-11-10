@@ -2,7 +2,8 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const serverless = require('serverless-http');
-const routes = require('./routes'); // Import routes
+// const routes = require('./routes'); // Import routes
+const routes = require('./api/status'); // Import API routes from /api/status
 
 const app = express();
 
