@@ -29,20 +29,32 @@
 
 
 
-const express = require('express');
-const app = express();
-const port = 3000;
-const serverless = require('serverless-http');
+// const express = require('express');
+// const app = express();
+// const port = 3000;
 
-// Route for the root URL
-app.get('/', (req, res) => {
-    res.send('Hello, World!');
-});
+// // Route for the root URL
+// app.get('/', (req, res) => {
+//     res.send('Hello, World!');
+// });
 
-
-// Start the server
+// // Start the server
 // app.listen(port, () => {
 //     console.log(`Server is running at http://localhost:${port}`);
 // });
 
+
+
+
+
+const express = require('express');
+const serverless = require('serverless-http');
+const app = express();
+
+// Simple route to test
+app.get('/', (req, res) => {
+    res.send('Hello, World!');
+});
+
+// Wrap the Express app with serverless-http and export as a handler
 module.exports.handler = serverless(app);
